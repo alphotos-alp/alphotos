@@ -112,6 +112,27 @@
         footer p {
             margin: 0;
         }
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        #back-to-top:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -123,11 +144,7 @@
         <div class="dropdown">
             <button class="dropbtn">Menu</button>
             <div class="dropdown-content">
-                <a href="index.html">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#services">Services</a>
-                <a href="#blog">Blog</a>
+                <a href="home.html">Home</a>
             </div>
         </div>
     </header>
@@ -139,12 +156,46 @@
     </nav>
 
     <section id="gallery" class="gallery">
-        <img src="photo1.jpg" alt="York Tech v. James Buchanan Photo 1">
-        <img src="photo2.jpg" alt="York Tech v. James Buchanan Photo 2">
-        <img src="photo3.jpg" alt="York Tech v. James Buchanan Photo 3">
-        <img src="photo4.jpg" alt="York Tech v. James Buchanan Photo 4">
-        <img src="photo5.jpg" alt="York Tech v. James Buchanan Photo 5">
-        <img src="photo6.jpg" alt="York Tech v. James Buchanan Photo 6">
+        <img src="photo1.jpeg" alt="York Tech v. James Buchanan Photo 1" loading="lazy">
+        <img src="photo2.jpeg" alt="York Tech v. James Buchanan Photo 2" loading="lazy">
+        <img src="photo3.jpeg" alt="York Tech v. James Buchanan Photo 3" loading="lazy">
+        <img src="photo4.jpeg" alt="York Tech v. James Buchanan Photo 4" loading="lazy">
+        <img src="photo5.jpeg" alt="York Tech v. James Buchanan Photo 5" loading="lazy">
+        <img src="photo6.jpeg" alt="York Tech v. James Buchanan Photo 6" loading="lazy">
+        <img src="photo7.jpeg" alt="York Tech v. James Buchanan Photo 7" loading="lazy">
+        <img src="photo8.jpeg" alt="York Tech v. James Buchanan Photo 8" loading="lazy">
+        <img src="photo9.jpeg" alt="York Tech v. James Buchanan Photo 9" loading="lazy">
+        <img src="photo10.jpeg" alt="York Tech v. James Buchanan Photo 10" loading="lazy">
+        <img src="photo11.jpeg" alt="York Tech v. James Buchanan Photo 11" loading="lazy">
+        <img src="photo12.jpeg" alt="York Tech v. James Buchanan Photo 12" loading="lazy">
+        <img src="photo13.jpeg" alt="York Tech v. James Buchanan Photo 13" loading="lazy">
+        <img src="photo14.jpeg" alt="York Tech v. James Buchanan Photo 14" loading="lazy">
+        <img src="photo15.jpeg" alt="York Tech v. James Buchanan Photo 15" loading="lazy">
+        <img src="photo16.jpeg" alt="York Tech v. James Buchanan Photo 16" loading="lazy">
+        <img src="photo17.jpeg" alt="York Tech v. James Buchanan Photo 17" loading="lazy">
+        <img src="photo18.jpeg" alt="York Tech v. James Buchanan Photo 18" loading="lazy">
+        <img src="photo19.jpeg" alt="York Tech v. James Buchanan Photo 19" loading="lazy">
+        <img src="photo20.jpeg" alt="York Tech v. James Buchanan Photo 20" loading="lazy">
+        <img src="photo21.jpeg" alt="York Tech v. James Buchanan Photo 21" loading="lazy">
+        <img src="photo22.jpeg" alt="York Tech v. James Buchanan Photo 22" loading="lazy">
+        <img src="photo23.jpeg" alt="York Tech v. James Buchanan Photo 23" loading="lazy">
+        <img src="photo24.jpeg" alt="York Tech v. James Buchanan Photo 24" loading="lazy">
+        <img src="photo25.jpeg" alt="York Tech v. James Buchanan Photo 25" loading="lazy">
+        <img src="photo26.jpeg" alt="York Tech v. James Buchanan Photo 26" loading="lazy">
+        <img src="photo27.jpeg" alt="York Tech v. James Buchanan Photo 27" loading="lazy">
+        <img src="photo28.jpeg" alt="York Tech v. James Buchanan Photo 28" loading="lazy">
+        <img src="photo29.jpeg" alt="York Tech v. James Buchanan Photo 29" loading="lazy">
+        <img src="photo30.jpeg" alt="York Tech v. James Buchanan Photo 30" loading="lazy">
+        <img src="photo31.jpeg" alt="York Tech v. James Buchanan Photo 31" loading="lazy">
+        <img src="photo32.jpeg" alt="York Tech v. James Buchanan Photo 32" loading="lazy">
+        <img src="photo33.jpeg" alt="York Tech v. James Buchanan Photo 33" loading="lazy">
+        <img src="photo34.jpeg" alt="York Tech v. James Buchanan Photo 34" loading="lazy">
+        <img src="photo35.jpeg" alt="York Tech v. James Buchanan Photo 35" loading="lazy">
+        <img src="photo36.jpeg" alt="York Tech v. James Buchanan Photo 36" loading="lazy">
+        <img src="photo37.jpeg" alt="York Tech v. James Buchanan Photo 37" loading="lazy">
+        <img src="photo38.jpeg" alt="York Tech v. James Buchanan Photo 38" loading="lazy">
+        <img src="photo39.jpeg" alt="York Tech v. James Buchanan Photo 39" loading="lazy">
+        <img src="photo40.jpeg" alt="York Tech v. James Buchanan Photo 40" loading="lazy">
     </section>
 
     <section id="about" class="about">
@@ -161,6 +212,29 @@
     <footer>
         <p>&copy; 2024. All Rights Reserved.</p>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" title="Back to Top">&uarr;</a>
+
+    <script>
+        // Get the button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // Show or hide the button based on scroll position
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        };
+
+        // Smooth scroll to the top when the button is clicked
+        backToTopButton.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return false; // Prevent default anchor behavior
+        };
+    </script>
 
 </body>
 </html>

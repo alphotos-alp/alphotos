@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photographer Portfolio</title>
+    <meta name="description" content="Aleigha Perry's photography portfolio showcasing sports photography, especially football.">
+    <meta name="keywords" content="photography, sports photography, football, portfolio">
+    <title>Aleigha Perry - Photographer Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -124,10 +126,6 @@
             <button class="dropbtn">Menu</button>
             <div class="dropdown-content">
                 <a href="8-23-24.html">York Tech 8/23/24</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#services">Services</a>
-                <a href="#blog">Blog</a>
             </div>
         </div>
     </header>
@@ -139,12 +137,7 @@
     </nav>
 
     <section id="gallery" class="gallery">
-        <img src="photo1.jpg" alt="Photography 1">
-        <img src="photo2.jpg" alt="Photography 2">
-        <img src="photo3.jpg" alt="Photography 3">
-        <img src="photo4.jpg" alt="Photography 4">
-        <img src="photo5.jpg" alt="Photography 5">
-        <img src="photo6.jpg" alt="Photography 6">
+        <!-- Images will be populated by JavaScript -->
     </section>
 
     <section id="about" class="about">
@@ -161,6 +154,24 @@
     <footer>
         <p>&copy; 2024. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript to generate random image numbers
+        function getRandomNumber(max) {
+            return Math.floor(Math.random() * max) + 1;
+        }
+
+        const gallery = document.querySelector('.gallery');
+        const numImages = 4; // Adjust this to match the number of images you have
+
+        for (let i = 1; i <= numImages; i++) {
+            const img = document.createElement('img');
+            const randomNumber = getRandomNumber(91); // Assumes image numbers are between 1 and 100
+            img.src = `photo${randomNumber}.jpeg`;
+            img.alt = `Photography ${randomNumber}`;
+            gallery.appendChild(img);
+        }
+    </script>
 
 </body>
 </html>
