@@ -129,7 +129,7 @@
                 <a href="8-23-24.html">York Tech 8/23/24</a>
                 <a href="8-31-24.html">York Tech 8/31/24</a>
                 <a href="9-6-24.html">York Tech 9/6/24</a>
-
+                <a href="9-20-24.html">York Tech 9/20/24</a>
             </div>
         </div>
     </header>
@@ -146,7 +146,7 @@
 
     <section id="about" class="about">
         <h2>About Me</h2>
-        <p>My name is Aleigha Perry, I have always enjoyed taking pictures since I was young. Now that I am finally able to live my dream of being a sports photographer(mainly football), I hope you like my work!</p>
+        <p>My name is Aleigha Perry, I have always enjoyed taking pictures since I was young. Now that I am finally able to live my dream of being a sports photographer (mainly football), I hope you like my work!</p>
     </section>
 
     <section id="contact" class="contact">
@@ -156,15 +156,14 @@
     </section>
 
     <footer>
-        <footer>
-            <a href="https://yourwebsite.com">
-                <img src="ALPhotosLogo.png" alt="ALPhotos Logo" style="width: 100px; height: auto;" style="text-align: left;" >
-            </a>
+        <a href="https://yourwebsite.com">
+            <img src="ALPhotosLogo.png" alt="ALPhotos Logo" style="width: 100px; height: auto;">
+        </a>
         <p>&copy; 2024. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // JavaScript to generate random image numbers
+        // JavaScript to generate random image numbers and handle fallback formats
         function getRandomNumber(max) {
             return Math.floor(Math.random() * max) + 1;
         }
@@ -174,9 +173,25 @@
 
         for (let i = 1; i <= numImages; i++) {
             const img = document.createElement('img');
-            const randomNumber = getRandomNumber(445); // Assumes image numbers are between 1 and 100
-            img.src = `photo${randomNumber}.jpeg`;
+            const randomNumber = getRandomNumber(445); // Assuming image numbers are between 1 and 445
+            let baseFilename = `photo${randomNumber}`;
+            
+            img.src = `${baseFilename}.jpg`;
             img.alt = `Photography ${randomNumber}`;
+
+            // Fallback to .jpeg if .jpg fails
+            img.onerror = function() {
+                img.src = `${baseFilename}.jpeg`;
+                img.onerror = function() {
+                    // Fallback to .cr2 if .jpeg also fails
+                    img.src = `${baseFilename}.cr2`;
+                    img.onerror = function() {
+                        console.error(`Failed to load image: ${baseFilename}`);
+                        img.alt = 'Image not available';
+                    };
+                };
+            };
+
             gallery.appendChild(img);
         }
     </script>
